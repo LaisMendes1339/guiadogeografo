@@ -4,27 +4,41 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Guia do Geógrafo</title>
+  <meta name="description" content="Do campus ao campo: carreira, prática e serviços para geógrafos.">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Hero -->
-  <header class="hero">
+  <!-- Barra de Navegação Fixa -->
+  <nav class="navbar" role="navigation" aria-label="Menu principal">
+    <div class="navbar-container">
+      <div class="navbar-brand">
+        <span class="logo">🌍</span>
+        <h1>GUIA DO GEÓGRAFO</h1>
+      </div>
+      <ul class="navbar-menu" id="navbarMenu">
+        <li><a href="#areas-atuacao" data-target="areas-atuacao">Áreas de Atuação</a></li>
+        <li><a href="#quiz" data-target="quiz">Quiz do Geógrafo</a></li>
+        <li><a href="#academico" data-target="academico">O que a faculdade te ensina</a></li>
+        <li><a href="#pratico" data-target="pratico">O que a faculdade NÃO te ensina</a></li>
+        <li><a href="#jornada-campo" data-target="jornada-campo">Do Campus ao Campo</a></li>
+        <li><a href="#servicos" data-target="servicos">Serviços</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero" role="banner">
     <div class="hero-content">
-      <h1>GUIA DO GEÓGRAFO</h1>
-      <p class="subtitle">Da graduação ao mercado — o que ninguém te contou</p>
+      <h2>Da graduação ao mercado — o que ninguém te contou</h2>
       <p class="impact">“A faculdade te deu base. O mercado exige prática.”</p>
     </div>
   </header>
 
-  <!-- Introdução -->
-  <section class="intro-section">
-    <div class="intro-container">
-      <h2>O que é Geografia?</h2>
-      <p>
-        A Geografia vai muito além de mapas e capitais. É a ciência que estuda as relações entre sociedade, natureza e território.
-        Ela nos ajuda a compreender desigualdades, transformações ambientais, dinâmicas urbanas, conflitos por terra e até decisões políticas globais.
-      </p>
-      <h3>Áreas de Atuação</h3>
+  <main class="main-content">
+
+    <!-- Seção: Áreas de Atuação -->
+    <section id="areas-atuacao" class="section areas-section">
+      <h2>Áreas de Atuação</h2>
       <div class="areas-grid">
         <div class="area-card"><strong>Meio Ambiente</strong><br>Análise de impacto, conservação.</div>
         <div class="area-card"><strong>Planejamento Urbano</strong><br>Mobilidade, habitação, zoneamento.</div>
@@ -33,112 +47,132 @@
         <div class="area-card"><strong>Educação</strong><br>Ensino crítico e formação cidadã.</div>
         <div class="area-card"><strong>Consultoria</strong><br>Relatórios técnicos para empresas.</div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Quiz -->
-  <section class="quiz-section">
-    <div class="quiz-container">
-      <h2>🔍 Que tipo de geógrafo você é?</h2>
-      <p>Responda 3 perguntas rápidas e descubra seu perfil profissional!</p>
-      <div id="quizContent">
-        <!-- Perguntas e resultado gerados pelo JS -->
+    <!-- Seção: Quiz -->
+    <section id="quiz" class="section quiz-section">
+      <div class="quiz-container">
+        <h2>🔍 Que tipo de geógrafo você é?</h2>
+        <p>Responda 3 perguntas rápidas e descubra seu perfil profissional!</p>
+        <div id="quizContent"></div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Depoimentos -->
-  <section class="depoimentos-section">
-    <h2>O que nossos leitores dizem</h2>
-    <div class="depoimentos-grid">
-      <div class="depoimento-card">
-        <p>“Usei as dicas do Guia para montar meu primeiro relatório técnico. Consegui meu estágio na prefeitura!”</p>
-        <strong>— Ana L., formada em 2023</strong>
+    <!-- Seção: O que a faculdade te ensina -->
+    <section id="academico" class="section academico-section">
+      <h2>O que a faculdade te ensina</h2>
+      <div class="cards-grid" id="academicoCards"></div>
+    </section>
+
+    <!-- Seção: O que a faculdade NÃO te ensina -->
+    <section id="pratico" class="section pratico-section">
+      <h2>O que a faculdade NÃO te ensina</h2>
+      <div class="timeline" id="praticoItems"></div>
+    </section>
+
+    <!-- Seção: Do Campus ao Campo (jornada interativa) -->
+    <section id="jornada-campo" class="section jornada-section">
+      <div class="container">
+        <h2>Do Campus ao Campo</h2>
+        <p class="subtitle-jornada">A jornada real do geógrafo: da teoria à prática no território</p>
+        <div class="timeline-container" id="timelineContainer"></div>
+        <div class="jornada-content" id="jornadaContent"></div>
       </div>
-      <div class="depoimento-card">
-        <p>“Finalmente entendi como usar QGIS em projetos reais. O e-book mudou minha carreira!”</p>
-        <strong>— Rafael M., consultor ambiental</strong>
+    </section>
+
+    <!-- Seção: Serviços -->
+    <section id="servicos" class="section servicos-section">
+      <h2>Nossos Serviços</h2>
+      <div class="servicos-grid">
+        <div class="servico-card consultoria">
+          <div class="servico-icon">👥</div>
+          <h3>Consultoria de Carreira</h3>
+          <p>Sessão individual para definir seu caminho profissional em Geografia.</p>
+          <button class="btn-servico" onclick="alert('Agendamento via WhatsApp: envie uma mensagem!')">Agendar consulta</button>
+        </div>
+        <div class="servico-card ebooks">
+          <div class="servico-icon">📘</div>
+          <h3>E-books Profissionais</h3>
+          <p>Guias práticos com modelos, checklists e estratégias reais.</p>
+          <button class="btn-servico" id="verEbooks">Ver catálogo</button>
+        </div>
       </div>
-      <div class="depoimento-card">
-        <p>“As dicas de networking me ajudaram a conseguir uma vaga em ONG internacional.”</p>
-        <strong>— Juliana S., geógrafa urbana</strong>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Barra de Filtros -->
-  <nav class="filter-nav">
-    <button class="filter-btn active" data-filter="all">Tudo</button>
-    <button class="filter-btn" data-filter="academico">O que a faculdade te ensina</button>
-    <button class="filter-btn" data-filter="pratico">O que a faculdade NÃO te ensina</button>
-    <button class="filter-btn" data-filter="campo">Do campus ao campo</button>
-  </nav>
-
-  <!-- Conteúdo Dinâmico -->
-  <main class="content-section">
-    <div class="content-grid" id="contentGrid"></div>
-  </main>
-
-  <!-- FAQ -->
-  <section class="faq-section">
-    <h2>Perguntas que todo estudante de Geografia faz</h2>
-    <div class="faq-item">
-      <h3>É preciso saber programar para usar QGIS?</h3>
+    <!-- FAQ -->
+   <!-- FAQ - Perguntas que todo geógrafo faz -->
+<section class="faq-section">
+  <h2>Perguntas que todo estudante de Geografia faz</h2>
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">É preciso saber programar para usar QGIS?</button>
+    <div class="faq-answer" hidden>
       <p>Não! O QGIS é intuitivo, mas aprender Python depois abre portas para automação e análise avançada.</p>
     </div>
-    <div class="faq-item">
-      <h3>Dá para trabalhar com Geografia sem gostar de campo?</h3>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">Dá para trabalhar com Geografia sem gostar de campo?</button>
+    <div class="faq-answer" hidden>
       <p>Sim! Muitos geógrafos atuam com dados, ensino, gestão pública ou consultoria remota.</p>
     </div>
-    <div class="faq-item">
-      <h3>Quanto ganha um geógrafo iniciante?</h3>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">Quanto ganha um geógrafo iniciante?</button>
+    <div class="faq-answer" hidden>
       <p>No Brasil, entre R$ 2.000 e R$ 3.500, dependendo da área (meio ambiente, urbano, energia).</p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Checklist Gratuito -->
-  <section class="checklist-section">
-    <div class="checklist-card">
-      <h2>📥 Baixe grátis: Checklist do Geógrafo de Campo</h2>
-      <p>Itens essenciais, checklist logístico e modelo de ficha de coleta — tudo em PDF.</p>
-      <button class="btn btn-checklist" id="downloadBtn">Receber no WhatsApp</button>
-      <div id="whatsappModal" class="modal hidden">
-        <div class="modal-content">
-          <span class="close">&times;</span>
-          <h3>Envio Simulado</h3>
-          <p>Na versão real, enviaremos o PDF via WhatsApp após você informar seu número.</p>
-          <p>Este é um protótipo — mas o conteúdo existe! 🌿</p>
+
+    <!-- Checklist Gratuito -->
+    <section class="checklist-section">
+      <div class="checklist-card">
+        <h2>📥 Baixe grátis: Checklist do Geógrafo de Campo</h2>
+        <p>Itens essenciais, checklist logístico e modelo de ficha de coleta — tudo em PDF.</p>
+        <button class="btn-checklist" id="downloadBtn">Receber no WhatsApp</button>
+        <div id="whatsappModal" class="modal hidden">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Envio Simulado</h3>
+            <p>Na versão real, enviaremos o PDF via WhatsApp após você informar seu número.</p>
+            <p>Este é um protótipo — mas o conteúdo existe! 🌿</p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- E-book -->
-  <section class="ebook-section">
-    <div class="ebook-card">
-      <h2>DO DIPLOMA AO MERCADO:<br>O GUIA PRÁTICO DO GEÓGRAFO FORA DA SALA DE AULA</h2>
-      <p class="ebook-subtitle">Ferramentas, decisões e atalhos que a faculdade não ensinou</p>
-      <ul class="ebook-benefits">
-        <li>✅ Mapa de carreiras reais em Geografia</li>
-        <li>✅ Checklist de ferramentas (QGIS, GPS, apps)</li>
-        <li>✅ Modelos de relatórios técnicos prontos</li>
-        <li>✅ Como responder editais e concorrer a projetos</li>
-        <li>✅ Dicas de networking e primeiro emprego</li>
-      </ul>
-      <p class="ebook-audience"><strong>Para quem é:</strong> Estudantes, recém-formados e geógrafos que querem sair da teoria.</p>
-      <button class="btn btn-buy" id="buyBtn">Comprar agora</button>
-      <div id="checkoutModal" class="modal hidden">
-        <div class="modal-content">
-          <span class="close">&times;</span>
-          <h3>Simulação de Compra</h3>
-          <p>Este é um protótipo front-end. Em produção, integraria com WhatsApp ou gateway de pagamento.</p>
-          <p><strong>Preço:</strong> R$ 39,90</p>
-          <button class="btn btn-success" id="confirmBuy">Receber no WhatsApp</button>
+    <!-- E-book -->
+    <section class="ebook-section">
+      <div class="ebook-card">
+        <h2>DO DIPLOMA AO MERCADO:<br>O GUIA PRÁTICO DO GEÓGRAFO FORA DA SALA DE AULA</h2>
+        <p class="ebook-subtitle">Ferramentas, decisões e atalhos que a faculdade não ensinou</p>
+        <ul class="ebook-benefits">
+          <li>✅ Mapa de carreiras reais em Geografia</li>
+          <li>✅ Checklist de ferramentas (QGIS, GPS, apps)</li>
+          <li>✅ Modelos de relatórios técnicos prontos</li>
+          <li>✅ Como responder editais e concorrer a projetos</li>
+          <li>✅ Dicas de networking e primeiro emprego</li>
+        </ul>
+        <p class="ebook-audience"><strong>Para quem é:</strong> Estudantes, recém-formados e geógrafos que querem sair da teoria.</p>
+        <button class="btn-buy" id="buyBtn">Comprar agora</button>
+        <div id="checkoutModal" class="modal hidden">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Simulação de Compra</h3>
+            <p>Este é um protótipo front-end. Em produção, integraria com WhatsApp ou gateway de pagamento.</p>
+            <p><strong>Preço:</strong> R$ 39,90</p>
+            <button class="btn-success" id="confirmBuy">Receber no WhatsApp</button>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
+  </main>
+<!-- Botão flutuante de WhatsApp -->
+<a href="https://wa.me/5585998421339" target="_blank" class="whatsapp-float" aria-label="Fale conosco no WhatsApp">
+  <span class="whatsapp-icon">💬</span>
+</a>
+  
   <script src="script.js"></script>
 </body>
 </html>
