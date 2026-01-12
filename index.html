@@ -8,33 +8,35 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
   <!-- Barra de Navegação Fixa -->
   <nav class="navbar" role="navigation" aria-label="Menu principal">
-    <div class="navbar-container">
-      <div class="navbar-brand">
-        <span class="logo">🌍</span>
-        <h1>GUIA DO GEÓGRAFO</h1>
+  <div class="navbar-container">
+    <div class="navbar-brand">
+      <span class="logo">🌍</span>
+      <h1>GUIA DO GEÓGRAFO</h1>
+    </div>
+    <ul class="navbar-menu" id="navbarMenu">
+      <li><a href="#areas-atuacao" data-target="areas-atuacao">Áreas de Atuação</a></li>
+      <li><a href="#quiz" data-target="quiz">Quiz do Geógrafo</a></li>
+      <li><a href="#academico" data-target="academico">O que a faculdade te ensina</a></li>
+      <li><a href="#pratico" data-target="pratico">O que a faculdade NÃO te ensina</a></li>
+      <li><a href="#jornada-campo" data-target="jornada-campo">Do Campus ao Campo</a></li>
+      <li><a href="#servicos" data-target="servicos">Serviços</a></li>
+    </ul>
+  </div>
+</nav>
+
+  <!-- Wrapper do conteúdo principal -->
+  <main class="content-wrapper">
+
+    <!-- Hero Section -->
+    <header class="hero" role="banner">
+      <div class="hero-content">
+        <h2>Da graduação ao mercado — o que ninguém te contou</h2>
+        <p class="impact">“A faculdade te deu base. O mercado exige prática.”</p>
       </div>
-      <ul class="navbar-menu" id="navbarMenu">
-        <li><a href="#areas-atuacao" data-target="areas-atuacao">Áreas de Atuação</a></li>
-        <li><a href="#quiz" data-target="quiz">Quiz do Geógrafo</a></li>
-        <li><a href="#academico" data-target="academico">O que a faculdade te ensina</a></li>
-        <li><a href="#pratico" data-target="pratico">O que a faculdade NÃO te ensina</a></li>
-        <li><a href="#jornada-campo" data-target="jornada-campo">Do Campus ao Campo</a></li>
-        <li><a href="#servicos" data-target="servicos">Serviços</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <!-- Hero Section -->
-  <header class="hero" role="banner">
-    <div class="hero-content">
-      <h2>Da graduação ao mercado — o que ninguém te contou</h2>
-      <p class="impact">“A faculdade te deu base. O mercado exige prática.”</p>
-    </div>
-  </header>
-
-  <main class="main-content">
+    </header>
 
     <!-- Seção: Áreas de Atuação -->
     <section id="areas-atuacao" class="section areas-section">
@@ -100,29 +102,27 @@
     </section>
 
     <!-- FAQ -->
-   <!-- FAQ - Perguntas que todo geógrafo faz -->
-<section class="faq-section">
-  <h2>Perguntas que todo estudante de Geografia faz</h2>
-  <div class="faq-item">
-    <button class="faq-question" aria-expanded="false">É preciso saber programar para usar QGIS?</button>
-    <div class="faq-answer" hidden>
-      <p>Não! O QGIS é intuitivo, mas aprender Python depois abre portas para automação e análise avançada.</p>
-    </div>
-  </div>
-  <div class="faq-item">
-    <button class="faq-question" aria-expanded="false">Dá para trabalhar com Geografia sem gostar de campo?</button>
-    <div class="faq-answer" hidden>
-      <p>Sim! Muitos geógrafos atuam com dados, ensino, gestão pública ou consultoria remota.</p>
-    </div>
-  </div>
-  <div class="faq-item">
-    <button class="faq-question" aria-expanded="false">Quanto ganha um geógrafo iniciante?</button>
-    <div class="faq-answer" hidden>
-      <p>No Brasil, entre R$ 2.000 e R$ 3.500, dependendo da área (meio ambiente, urbano, energia).</p>
-    </div>
-  </div>
-</section>
-
+    <section class="faq-section">
+      <h2>Perguntas que todo estudante de Geografia faz</h2>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">É preciso saber programar para usar QGIS?</button>
+        <div class="faq-answer" hidden>
+          <p>Não! O QGIS é intuitivo, mas aprender Python depois abre portas para automação e análise avançada.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">Dá para trabalhar com Geografia sem gostar de campo?</button>
+        <div class="faq-answer" hidden>
+          <p>Sim! Muitos geógrafos atuam com dados, ensino, gestão pública ou consultoria remota.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">Quanto ganha um geógrafo iniciante?</button>
+        <div class="faq-answer" hidden>
+          <p>No Brasil, entre R$ 2.000 e R$ 3.500, dependendo da área (meio ambiente, urbano, energia).</p>
+        </div>
+      </div>
+    </section>
 
     <!-- Checklist Gratuito -->
     <section class="checklist-section">
@@ -168,11 +168,12 @@
     </section>
 
   </main>
-<!-- Botão flutuante de WhatsApp -->
-<a href="https://wa.me/5585998421339" target="_blank" class="whatsapp-float" aria-label="Fale conosco no WhatsApp">
-  <span class="whatsapp-icon">💬</span>
-</a>
-  
+
+  <!-- Botão flutuante de WhatsApp -->
+  <a href="https://wa.me/5585998421339" target="_blank" class="whatsapp-float" aria-label="Fale conosco no WhatsApp">
+    <span class="whatsapp-icon">💬</span>
+  </a>
+
   <script src="script.js"></script>
 </body>
 </html>
