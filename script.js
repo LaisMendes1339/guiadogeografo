@@ -1,26 +1,47 @@
-// === DADOS ===
-const conteudos = [
-  // ... (mesmo array anterior) ...
-  { tipo: 'academico', titulo: 'Geografia Física', texto: 'Estudo dos processos naturais: clima, relevo, solos, hidrografia e ecossistemas. Base para análise ambiental e riscos.' },
-  { tipo: 'academico', titulo: 'Geografia Humana', texto: 'Investiga migrações, identidade cultural, urbanização e desigualdades sociais sob uma perspectiva espacial crítica.' },
-  { tipo: 'academico', titulo: 'Geografia Agrária', texto: 'Analisa estrutura fundiária, reforma agrária, conflitos rurais e produção no campo brasileiro.' },
-  { tipo: 'academico', titulo: 'Geografia Urbana', texto: 'Estuda segregação espacial, mobilidade, periferias e políticas de planejamento nas cidades.' },
-  { tipo: 'academico', titulo: 'Geopolítica', texto: 'Explora poder, fronteiras, recursos estratégicos e narrativas territoriais no cenário global.' },
-  { tipo: 'academico', titulo: 'Cartografia', texto: 'Representação do espaço com rigor técnico: escalas, projeções, simbologia e mapas temáticos.' },
-  { tipo: 'pratico', titulo: 'Networking Profissional', texto: 'Como construir contatos reais com empresas, órgãos públicos e colegas — essencial para oportunidades.' },
-  { tipo: 'pratico', titulo: 'Mercado Real', texto: 'Onde os geógrafos atuam hoje: consultorias ambientais, prefeituras, energia, logística e startups.' },
-  { tipo: 'pratico', titulo: 'Primeiro Emprego', texto: 'Dicas práticas para conseguir seu primeiro trabalho mesmo sem experiência formal.' },
-  { tipo: 'pratico', titulo: 'Especializações Valorizadas', texto: 'SIG, sensoriamento remoto, análise territorial e gestão ambiental são diferenciais no currículo.' },
-  { tipo: 'pratico', titulo: 'Relatórios Técnicos', texto: 'Modelo usado no mercado: objetivo, metodologia, resultados, conclusões e anexos visuais.' },
-  { tipo: 'pratico', titulo: 'Leitura de Editais', texto: 'Como interpretar editais públicos e montar propostas competitivas para projetos.' },
-  { tipo: 'pratico', titulo: 'Ferramentas Autodidatas', texto: 'QGIS, Google Earth Pro, drones, KoboToolbox — aprenda sozinho com tutoriais online.' },
-  { tipo: 'campo', titulo: '🌱 Planejamento', texto: 'Leitura prévia da área, definição de objetivos, checklist logístico e plano de segurança.' },
-  { tipo: 'campo', titulo: '🦺 EPIs Essenciais', texto: 'Botas de borracha, colete refletivo, protetor solar, repelente e prancheta à prova d’água.' },
-  { tipo: 'campo', titulo: '🛰️ Tecnologias', texto: 'GPS de precisão, apps móveis (Survey123, Kobo), drones autorizados e QGIS Mobile.' },
-  { tipo: 'campo', titulo: '❌ Erros Comuns', texto: 'Nunca vá sem planejamento, subestime riscos climáticos ou ignore normas ambientais locais.' }
-];
+// === DADOS EXISTENTES ===
+const dados = {
+  academico: [
+    { titulo: "Geografia Física", texto: "Estudo de clima, relevo, solos e hidrografia. Foco em processos naturais e análise ambiental." },
+    { titulo: "Geografia Humana", texto: "Relações sociedade-espaço, migração, urbanização e cultura. Base teórica crítica." },
+    { titulo: "Geografia Agrária", texto: "Estrutura fundiária, reforma agrária, conflitos rurais e produção no campo." },
+    { titulo: "Geografia Urbana", texto: "Dinâmica das cidades, segregação espacial, mobilidade e planejamento urbano." },
+    { titulo: "Geopolítica", texto: "Poder, território, fronteiras e relações internacionais sob ótica geográfica." },
+    { titulo: "Cartografia", texto: "Representação do espaço, escalas, projeções e introdução a mapas temáticos." }
+  ],
+  pratico: [
+    "Networking profissional (como construir contatos reais)",
+    "Mercado de trabalho real (onde os geógrafos atuam hoje)",
+    "Como conseguir seu primeiro trabalho (sem experiência)",
+    "Especializações valorizadas (SIG, meio ambiente, gestão territorial)",
+    "Escrita de relatório técnico (modelo usado por empresas)",
+    "Leitura e interpretação de editais públicos",
+    "Ferramentas que você aprende sozinho (QGIS, Google Earth, drones)"
+  ],
+  campo: [
+    {
+      tipo: "planejamento",
+      titulo: "🌱 Planejamento",
+      itens: ["Leitura prévia da área", "Definição de objetivos", "Checklist logístico", "Plano de segurança"]
+    },
+    {
+      tipo: "equipamento",
+      titulo: "🦺 EPIs Essenciais",
+      itens: ["Botas de borracha", "Colete refletivo", "Protetor solar", "Repelente", "Prancheta à prova d’água"]
+    },
+    {
+      tipo: "tecnologia",
+      titulo: "🛰️ Tecnologias",
+      itens: ["GPS de precisão", "Apps móveis (Survey123, Kobo)", "Drones autorizados", "Google Earth Pro", "QGIS Mobile"]
+    },
+    {
+      tipo: "erros",
+      titulo: "❌ Erros Comuns",
+      itens: ["Ir sem planejamento", "Subestimar riscos climáticos", "Ignorar normas ambientais locais"]
+    }
+  ]
+};
 
-// === QUIZ: Dados e lógica ===
+// === QUIZ DATA ===
 const quizData = [
   {
     question: "Qual atividade te atrai mais?",
@@ -70,35 +91,99 @@ const perfis = {
   }
 };
 
+// === JORNADA: DO CAMPUS AO CAMPO ===
+const jornadaDados = [
+  {
+    id: 'campus',
+    titulo: 'Campus',
+    descricao: 'A graduação oferece uma base teórica sólida, mas muitas vezes desconectada da realidade profissional.',
+    aprendizados: [
+      'O que a graduação ensina',
+      'Limitações da teoria',
+      'Importância da base conceitual'
+    ]
+  },
+  {
+    id: 'planejamento',
+    titulo: 'Planejamento',
+    descricao: 'Antes de sair para o campo, é essencial definir objetivos claros e preparar-se tecnicamente.',
+    aprendizados: [
+      'Definição de objetivos',
+      'Estudo prévio da área',
+      'Escolha de métodos e equipamentos'
+    ]
+  },
+  {
+    id: 'campo',
+    titulo: 'Campo',
+    descricao: 'Momento de coleta direta, observação crítica e adaptação às condições reais do território.',
+    aprendizados: [
+      'Coleta de dados',
+      'Uso de EPIs',
+      'Técnicas de observação e registro'
+    ]
+  },
+  {
+    id: 'pos-campo',
+    titulo: 'Pós-campo',
+    descricao: 'Transformar dados brutos em conhecimento útil para análise, relatórios e tomada de decisão.',
+    aprendizados: [
+      'Organização dos dados',
+      'Análise e interpretação',
+      'Relatórios e tomada de decisão'
+    ]
+  }
+];
+
+// === ELEMENTOS ===
 let currentQuestion = 0;
 let answers = [];
+let etapaAtiva = 'campus';
 
-// === DOM Elements ===
-const contentGrid = document.getElementById('contentGrid');
-const filterButtons = document.querySelectorAll('.filter-btn');
+const navLinks = document.querySelectorAll('.navbar-menu a');
 const buyBtn = document.getElementById('buyBtn');
 const downloadBtn = document.getElementById('downloadBtn');
+const verEbooksBtn = document.getElementById('verEbooks');
 const checkoutModal = document.getElementById('checkoutModal');
 const whatsappModal = document.getElementById('whatsappModal');
 const closeButtons = document.querySelectorAll('.close');
 
-// === Funções principais ===
-function renderCards(filter = 'all') {
-  contentGrid.innerHTML = '';
-  const itens = filter === 'all' 
-    ? conteudos 
-    : conteudos.filter(item => item.tipo === filter);
-  
-  itens.forEach(item => {
+// === FUNÇÕES ===
+function renderAcademico() {
+  const container = document.getElementById('academicoCards');
+  container.innerHTML = '';
+  dados.academico.forEach(item => {
     const card = document.createElement('div');
-    card.className = 'card';
-    card.dataset.type = item.tipo;
+    card.className = 'card-academico';
     card.innerHTML = `<h3>${item.titulo}</h3><p>${item.texto}</p>`;
-    contentGrid.appendChild(card);
+    container.appendChild(card);
   });
 }
 
-// === Quiz Functions ===
+function renderPratico() {
+  const container = document.getElementById('praticoItems');
+  container.innerHTML = '';
+  dados.pratico.forEach((texto, i) => {
+    const item = document.createElement('div');
+    item.className = 'timeline-item';
+    item.textContent = texto;
+    item.style.animationDelay = `${i * 0.1}s`;
+    container.appendChild(item);
+  });
+}
+
+function renderCampo() {
+  const container = document.getElementById('campoGroups');
+  container.innerHTML = '';
+  dados.campo.forEach(grupo => {
+    const div = document.createElement('div');
+    div.className = `campo-card ${grupo.tipo}`;
+    const itensHtml = grupo.itens.map(i => `<li>• ${i}</li>`).join('');
+    div.innerHTML = `<h3>${grupo.titulo}</h3><ul>${itensHtml}</ul>`;
+    container.appendChild(div);
+  });
+}
+
 function showQuiz() {
   const quizEl = document.getElementById('quizContent');
   if (currentQuestion < quizData.length) {
@@ -131,7 +216,6 @@ function showQuiz() {
       showQuiz();
     });
   } else {
-    // Calcular resultado
     const counts = {};
     answers.forEach(a => counts[a] = (counts[a] || 0) + 1);
     const resultType = Object.keys(counts).reduce((a, b) => counts[a] > counts[b] ? a : b);
@@ -153,28 +237,107 @@ function showQuiz() {
   }
 }
 
-// === Event Listeners ===
-filterButtons.forEach(btn => {
-  btn.addEventListener('click', () => {
-    filterButtons.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    renderCards(btn.dataset.filter);
+function renderTimeline() {
+  const timelineContainer = document.getElementById('timelineContainer');
+  timelineContainer.innerHTML = '';
+  jornadaDados.forEach((etapa, index) => {
+    const div = document.createElement('div');
+    div.className = `etapa ${etapa.id === etapaAtiva ? 'ativa' : ''}`;
+    div.dataset.id = etapa.id;
+    div.innerHTML = `
+      <div class="etapa-circle">${index + 1}</div>
+      <div class="etapa-label">${etapa.titulo}</div>
+    `;
+    div.addEventListener('click', () => mudarEtapa(etapa.id));
+    timelineContainer.appendChild(div);
+  });
+}
+
+function atualizarConteudo(id) {
+  const etapa = jornadaDados.find(e => e.id === id);
+  if (!etapa) return;
+
+  const itensHtml = etapa.aprendizados.map(item => `<li>${item}</li>`).join('');
+  const contentDiv = document.getElementById('jornadaContent');
+  contentDiv.innerHTML = `
+    <h3>${etapa.titulo}</h3>
+    <p>${etapa.descricao}</p>
+    <ul>${itensHtml}</ul>
+  `;
+}
+
+function mudarEtapa(id) {
+  etapaAtiva = id;
+  renderTimeline();
+  atualizarConteudo(id);
+}
+
+// === FAQ INTERATIVO ===
+document.addEventListener('DOMContentLoaded', () => {
+  const faqQuestions = document.querySelectorAll('.faq-question');
+  
+  faqQuestions.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const answer = btn.nextElementSibling;
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      
+      // Fecha todos
+      faqQuestions.forEach(b => {
+        b.setAttribute('aria-expanded', 'false');
+        b.nextElementSibling.hidden = true;
+      });
+      
+      // Abre o clicado
+      if (!expanded) {
+        btn.setAttribute('aria-expanded', 'true');
+        answer.hidden = false;
+      }
+    });
+  });
+});
+
+// === EVENTOS ===
+navLinks.forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    const targetId = link.getAttribute('href').substring(1);
+    const targetSection = document.getElementById(targetId);
+    if (targetSection) {
+      targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    // Atualiza classe 'active' no menu
+    navLinks.forEach(l => l.classList.remove('active'));
+    link.classList.add('active');
   });
 });
 
 buyBtn.addEventListener('click', () => checkoutModal.classList.remove('hidden'));
 downloadBtn.addEventListener('click', () => whatsappModal.classList.remove('hidden'));
+verEbooksBtn.addEventListener('click', () => {
+  document.querySelector('.ebook-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
+});
+
 closeButtons.forEach(btn => {
   btn.addEventListener('click', (e) => {
     e.target.closest('.modal').classList.add('hidden');
   });
 });
 
-document.getElementById('confirmBuy').addEventListener('click', () => {
+document.getElementById('confirmBuy')?.addEventListener('click', () => {
   alert('🎉 Obrigado! Em breve enviaremos o link do e-book via WhatsApp.');
   checkoutModal.classList.add('hidden');
 });
 
-// Inicializar
-renderCards('all');
-showQuiz();
+// === INICIALIZAÇÃO ===
+document.addEventListener('DOMContentLoaded', () => {
+  renderAcademico();
+  renderPratico();
+  showQuiz();
+  renderTimeline();
+  atualizarConteudo(etapaAtiva);
+
+  // Define o primeiro link como ativo
+  if (navLinks.length > 0) {
+    navLinks[0].classList.add('active');
+  }
+});
